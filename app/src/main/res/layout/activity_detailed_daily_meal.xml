@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DetailedDailyMealActivity">
+
+    <!--App bar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:fitsSystemWindows="true">
+
+
+        <!--Cuộn trong Coordinator-->
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:collapsedTitleTextColor="@color/white"
+            app:contentScrim="@color/black"
+            app:expandedTitleTextColor="@color/white"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="Daily Meal">
+
+            <ImageView
+                android:id="@+id/detailed_img"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/breakfast" />
+
+            <Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:titleTextColor="@color/white" />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_bg"
+        android:padding="15dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detailed_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#f2ecdb" />
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#f2ecdb"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_shopping_cart_24"
+        android:tint="@null"
+        app:fabSize="normal"
+        app:layout_anchor="@id/appBar"
+        app:layout_anchorGravity="end|bottom" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
